@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SeoulProject.Views.ManagmentView">
+  
+             <Grid RowDefinitions="Auto,Auto, *">
+
+              <Border BorderThickness="1" BorderBrush="Black" Grid.Row="0" Margin="50">
+              <TextBlock Text="LOGO" FontSize="30" Margin="20" HorizontalAlignment="Center"/>
+             </Border>
+
+              <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="20" Margin="20" HorizontalAlignment="Right">
+                <Button Content="Log out" />
+                <Button Content="Exit"/>
+              </StackPanel>
+
+              <TabControl  Grid.Row="2">
+                <TabItem Header="I'm Traveler" FontSize="14">
+
+                  <Grid RowDefinitions="Auto, *" RowSpacing="20" Margin="20">
+
+                    <TextBox Watermark="Search destination or Listing Title or Attraction" Grid.Row="0"/>
+
+                    <DataGrid Grid.Row="1" GridLinesVisibility="All"  Name="DGtrav" >
+                      <DataGrid.Columns>
+                        <DataGridTextColumn Header="Title"/>
+                        <DataGridTextColumn Header="Capacity"/>
+                        <DataGridTextColumn Header="Area"/>
+                        <DataGridTextColumn Header="Type"/>
+                    </DataGrid.Columns>
+                    </DataGrid>
+                  </Grid>
+                </TabItem>
+                <TabItem Header="I'm Owner or Manager" FontSize="14">
+
+                 <Grid RowDefinitions="Auto, *" RowSpacing="20" Margin="20">
+
+                    <Button Content="Add Listing" Grid.Row="0"/>
+
+                    <DataGrid Grid.Row="1" Name="DGman" >
+                      <DataGrid.Columns>
+                          
+                        <DataGridTextColumn Header="Title"/>
+                        <DataGridTextColumn Header="Capacity"/>
+                        <DataGridTextColumn Header="Area"/>
+                        <DataGridTextColumn Header="Type"/>
+                        <DataGridTemplateColumn>
+                          <DataTemplate>
+                            <HyperlinkButton Content="Edit Details"/>
+                          </DataTemplate>
+                        </DataGridTemplateColumn>
+                   
+                    </DataGrid.Columns>
+                    </DataGrid>
+                  </Grid>
+                </TabItem>
+              </TabControl>
+
+             </Grid>
+</UserControl>
