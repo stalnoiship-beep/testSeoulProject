@@ -22,13 +22,20 @@ public partial class ManagmentView : UserControl
         DGtrav.ItemsSource = myTables;
         DGman.ItemsSource = myTables;
     }
+
+    private void EditDetails_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        MainWindow.instance.mainControl.Content = new ListingDetailsView();
+    }
+
+    
 }
 
 public class myTable
 {
-    public string title{get;set;}
-    public int capacity{get;set;}
-    public string area{get;set;}
-    public string type{get;set;}
+    public string title { get; set; }
+    public int capacity { get; set; }
+    public string area { get; set; }
+    public string type { get; set; }
 
 }

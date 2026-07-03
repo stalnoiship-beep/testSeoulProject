@@ -14,20 +14,27 @@
                   RowSpacing="20"
                   ColumnSpacing="20" Margin="50">
 
+                  <!--Столбец 0-->
                     <TextBlock Text="Username:" Grid.Column="0" Grid.Row="0"/>
                     <TextBlock Text="Full Name:" Grid.Column="0" Grid.Row="1"/>
                     <TextBlock Text="Birthday:" Grid.Column="0" Grid.Row="2"/>
                     <TextBlock Text="Password:" Grid.Column="0" Grid.Row="3"/>
 
-                    <TextBox Grid.Row="0" Grid.Column="1"/>
-                    <TextBox Grid.Row="1" Grid.Column="1"/>
-                    <DatePicker Grid.Column="1" Grid.Row="2"/>
-                    <TextBox Grid.Row="3" Grid.Column="1"/>
+                     <!--Столбец 1-->
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="tbUserName"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Name="tbFullName"/>
+                    <DatePicker Grid.Column="1" Grid.Row="2" Name="DateBirtn"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Name="tbPassword"/>
 
-
+                     <!--Столбец 2-->
                     <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Horizontal" Spacing="20">
-                      <RadioButton Content="Male"/>
-                      <RadioButton Content="Female"/>
+                      <RadioButton Content="Male" Name="rbMale"/>
+                      <RadioButton Content="Female" Name="rbFemale"/>
+                    </StackPanel>
+
+                     <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" Spacing="20" HorizontalAlignment="Stretch">
+                      <TextBlock Text="Number of Family Members:"/>
+                      <NumericUpDown MinWidth="100" HorizontalAlignment="Stretch" Name="familyCount" Minimum="0" Increment="1"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Grid.Row="3" Orientation="Horizontal" Spacing="20" HorizontalAlignment="Stretch">

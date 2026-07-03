@@ -1,0 +1,89 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SeoulProject.Views.ListingDetailsView">
+  
+             <Grid Margin="20">
+              <TabControl>
+
+                <TabItem Header="Listing Details" FontSize="14">
+                  <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                    RowSpacing="10">
+
+                    <Grid Grid.Row="0"
+                    ColumnDefinitions="Auto,*,Auto,*" ColumnSpacing="10">
+
+                      <TextBlock Text="Type:" Grid.Column="0"/>
+                      <ComboBox Grid.Column="1" HorizontalAlignment="Stretch"/>
+                      <TextBlock Text="Title:" Grid.Column="2"/>
+                      <TextBox Grid.Column="3"/>
+
+                    </Grid>
+                    
+                    <WrapPanel Grid.Row="1" Orientation="Horizontal" LineSpacing="10">
+                      <TextBlock Text="Capacity:" Margin="10,0,10,0"/>
+                      <NumericUpDown Margin="10,0,10,0" MinWidth="100"/>
+                       <TextBlock Text="Number of Beds:" Margin="10,0,10,0"/>
+                      <NumericUpDown Margin="10,0,10,0" MinWidth="100"/>
+                       <TextBlock Text="Number of Bedrooms:" Margin="10,0,10,0"/>
+                      <NumericUpDown Margin="10,0,10,0" MinWidth="100"/>
+                       <TextBlock Text="Number of Bathrooms:" Margin="10,0,10,0"/>
+                      <NumericUpDown Margin="10,0,10,0" MinWidth="100"/>
+                    </WrapPanel>
+
+                    <Grid Grid.Row="2" ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                      <TextBlock Text="Approximate Address:"/>
+                      <TextBox Grid.Column="1"/>
+                    </Grid>
+
+                    <Grid Grid.Row="3" ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                      <TextBlock Text="Exact Address:"/>
+                      <TextBox Grid.Column="1"/>
+                    </Grid>
+
+                     <Grid Grid.Row="4" ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                      <TextBlock Text="Description:"/>
+                      <TextBox Grid.Column="1"/>
+                    </Grid>
+
+                     <Grid Grid.Row="5" ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                      <TextBlock Text="Host Rules:"/>
+                      <TextBox Grid.Column="1"/>
+                    </Grid>
+
+                     <WrapPanel Grid.Row="6" Orientation="Horizontal" LineSpacing="10">
+                      <TextBlock Text="Reservation Time (Nigths):" Margin="10,0,10,0"/>
+                      <TextBlock Text="Minimum:" Margin="10,0,10,0"/>
+                      <NumericUpDown Margin="10,0,10,0"/>
+                      <TextBlock Text="Maximum:" Margin="10,0,10,0"/>
+                    </WrapPanel>
+
+                  </Grid>
+                </TabItem>
+
+                <TabItem Header="Amenities" FontSize="14">
+                  <Grid RowDefinitions="Auto,*" RowSpacing="10">
+
+                  <TextBlock Text="Choose Available Amenities:"/>
+
+                  <DataGrid Grid.Row="1">
+                    <DataGrid.Columns>
+                      <DataGridTextColumn Header="Amenity"/>
+                      <DataGridTemplateColumn>
+                        <DataTemplate>
+                          <CheckBox/>
+                        </DataTemplate>
+                      </DataGridTemplateColumn>
+                  </DataGrid.Columns>
+                  </DataGrid>
+                  </Grid>
+                </TabItem>
+
+                 <TabItem Header="Distance to Attraction" FontSize="14">
+
+                 </TabItem>
+              </TabControl>
+             </Grid>
+</UserControl>

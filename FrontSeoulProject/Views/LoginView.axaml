@@ -9,10 +9,14 @@
              RowSpacing="20"
              Margin="20"
              HorizontalAlignment="Stretch">
-            
+
+            <!-- Логотип LOGO -->
+
              <Border BorderThickness="1" BorderBrush="Black" Grid.Row="0">
               <TextBlock Text="LOGO" FontSize="30" Margin="20" HorizontalAlignment="Center"/>
              </Border>
+
+             <!-- Data Login -->
 
              <Border Grid.Row="1" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Stretch">
 
@@ -20,23 +24,34 @@
               ColumnDefinitions="Auto, *, Auto"
             ColumnSpacing="20"
           RowSpacing="20">
+
+
         <TextBlock Text="Employee:" Grid.Row="0" Grid.Column="0"/>
         <TextBlock Text="User:" Grid.Row="1" Grid.Column="0"/>
         <TextBlock Text="Password:" Grid.Row="2" Grid.Column="0"/>
 
-        <TextBox Grid.Column="1" Grid.Row="0"/>
-        <TextBox Grid.Column="1" Grid.Row="1"/>
-        <TextBox Grid.Column="1" Grid.Row="2"/>
+        <!-- Employee -->
+        <TextBox Name="tbEmployee" Grid.Column="1" Grid.Row="0" TextChanged="Employee_TextChanged"/>
+
+         <!-- User -->        
+        <TextBox Name="tbUser" Grid.Column="1" Grid.Row="1" TextChanged="User_TextChanged"/>
+
+        <!-- PASSWORD -->
+        <TextBox Grid.Column="1" Grid.Row="2" PasswordChar="*" RevealPassword="{Binding #chbShowPass.IsChecked}" Name="tbPass" TextChanged="Password_TextChanged"/>
 
         <CheckBox Content="Keep me signed in" Grid.Row="0" Grid.Column="2"/>
-        <CheckBox Content="Show password" Grid.Row="2" Grid.Column="2"/>
+        <CheckBox Name="chbShowPass" Content="Show password" Grid.Row="2" Grid.Column="2"/>
         </Grid>
              </Border>
 
+             <!-- Login , Exit -->
+
              <StackPanel Orientation="Horizontal" Grid.Row="2" Spacing="20" HorizontalAlignment="Center">
-                <Button Content="Login"/>
+                <Button Content="Login" Name="bLogin" Click="bLogin_Click" IsEnabled="False"/>
                 <Button Content="Exit"/>
              </StackPanel>
+
+             <!-- Create Account -->
 
               <StackPanel Orientation="Horizontal" Grid.Row="3" Spacing="20" HorizontalAlignment="Center">
                 <TextBlock Text="Don't have account?"/>

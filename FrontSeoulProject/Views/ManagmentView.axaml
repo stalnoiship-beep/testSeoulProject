@@ -48,7 +48,7 @@
                         <DataGridTextColumn Header="Type"/>
                         <DataGridTemplateColumn>
                           <DataTemplate>
-                            <HyperlinkButton Content="Edit Details"/>
+                            <HyperlinkButton Content="Edit Details" Click="EditDetails_Click"/>
                           </DataTemplate>
                         </DataGridTemplateColumn>
                    

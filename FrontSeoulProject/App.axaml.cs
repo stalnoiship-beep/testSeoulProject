@@ -6,6 +6,9 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using SeoulProject.ViewModels;
 using SeoulProject.Views;
+using System.IO;
+using System;
+using System.Text.Json;
 
 namespace SeoulProject;
 
@@ -43,5 +46,23 @@ public partial class App : Application
         {
             BindingPlugins.DataValidators.Remove(plugin);
         }
+    }
+
+
+}
+
+public class AppConfig
+{
+    public string BaseAddress{get;set;}
+}
+
+public class JsonConfigure
+{
+    public static AppConfig ReadJsonConfig()
+    {
+        string way = Path.Combine(AppContext.BaseDirectory, "appsettings.json");
+        string json = File.ReadAllText(way);
+        return JsonSerializer.Deserialize<AppConfig>(json);
+        
     }
 }
