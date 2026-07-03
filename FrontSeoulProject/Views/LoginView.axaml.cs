@@ -1,4 +1,5 @@
 using System;
+using System.Net.Http.Json;
 using System.Text.Json;
 using Avalonia;
 using Avalonia.Controls;
@@ -82,9 +83,10 @@ public partial class LoginView : UserControl
 
     private async void bLogin_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
+        var data = new {username = tbUser.Text, password = tbPass.Text};
         try
         {
-            var response = await http.client.GetAsync("/api/login/");
+            var response = await http.client.PostAsJsonAsync("/seoul/v1/login/", data);
             string Content = await response.Content.ReadAsStringAsync();
 
             if(!response.IsSuccessStatusCode)
